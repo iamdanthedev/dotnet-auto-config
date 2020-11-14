@@ -4,7 +4,7 @@ using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ConfigurationAutoBinder
+namespace Bonliva.ConfigurationAutoBinder
 {
     public class AutoBindConfigurationAttribute : Attribute
     {

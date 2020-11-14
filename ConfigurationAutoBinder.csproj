@@ -10,6 +10,7 @@
         <PackageProjectUrl>https://bonliva.se</PackageProjectUrl>
         <PackageVersion>$([System.DateTime]::Now.ToString("yyyy.MM.dd.HHmmss"))</PackageVersion>
         <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+        <RootNamespace>Bonliva.ConfigurationAutoBinder</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
