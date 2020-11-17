@@ -107,7 +107,10 @@ namespace ConfigurationAutoBinderTool
             Console.WriteLine($"DLLs found:\n {string.Join("\n", dllFileNames)}");
 
             return dllFileNames.Select(x =>
-                    AssemblyLoadContext.Default.LoadFromAssemblyPath(x))
+                {
+                    return Assembly.LoadFrom(x);
+                    // return AssemblyLoadContext.Default.LoadFromAssemblyPath(x))
+                })
                 .ToList();
         }
 

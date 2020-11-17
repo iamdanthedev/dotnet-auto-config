@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Bonliva.ConfigurationAutoBinder;
-using MongoDB.Bson;
+// using MongoDB.Bson;
 
 namespace ConfigurationAutoBinderToolTest
 {
@@ -20,8 +20,8 @@ namespace ConfigurationAutoBinderToolTest
         public IEnumerable<string> SomeList2 { get; set; }
     }
 
-    public class Foo
-    {
-        public ObjectId Id { get; set; }
-    }
+    // public class Foo
+    // {
+    //     public ObjectId Id { get; set; }
+    // }
 }
