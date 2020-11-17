@@ -2,10 +2,15 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\ConfigurationAutoBinder\ConfigurationAutoBinder.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MongoDB.Bson" Version="2.11.4" />
     </ItemGroup>
 
 </Project>

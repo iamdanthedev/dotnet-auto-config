@@ -8,6 +8,14 @@
         <PackageOutputPath>./nupkg</PackageOutputPath>
         <OutputType>Exe</OutputType>
         <Nullable>enable</Nullable>
+
+        <PackageId>Bonliva.ConfigurationAutoBinderTool</PackageId>
+        <Authors>Bonliva AB</Authors>
+        <Copyright>Bonliva AB</Copyright>
+        <PackageProjectUrl>https://bonliva.se</PackageProjectUrl>
+        <PackageVersion>$([System.DateTime]::Now.ToString("yyyy.MM.dd.HHmmss"))</PackageVersion>
+        <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+        <RootNamespace>Bonliva.ConfigurationAutoBinderTool</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

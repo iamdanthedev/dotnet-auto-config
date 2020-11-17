@@ -99,10 +99,12 @@ namespace ConfigurationAutoBinderTool
                     .DistinctBy(Path.GetFileName)
                     .ToList();
 
-            if (dllFileNames.Count() == 0)
+            if (dllFileNames.Count == 0)
             {
                 throw new Exception("no projects found");
             }
+
+            Console.WriteLine($"DLLs found:\n {string.Join("\n", dllFileNames)}");
 
             return dllFileNames.Select(x =>
                     AssemblyLoadContext.Default.LoadFromAssemblyPath(x))
