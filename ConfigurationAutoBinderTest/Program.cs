@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using Bonliva.ConfigurationAutoBinder;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+namespace ConfigurationAutoBinderTest
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            await Host.CreateDefaultBuilder()
+                .ConfigureAppConfiguration(config =>
+                {
+                    config.SetBasePath(Directory.GetCurrentDirectory());
+                    config.AddJsonFile("appsettings.json");
+                })
+                .ConfigureServices((context, services) =>
+                {
+                    services.AddAutoBoundConfiguration(context.Configuration, "Development");
+                    services.AddHostedService<ProgramService>();
+
+                })
+                .RunConsoleAsync();
+        }
+
+        public class ProgramService : IHostedService
+        {
+            private readonly Test1Options _test1Options;
+
+            public ProgramService(Test1Options test1Options)
+            {
+                _test1Options = test1Options;
+            }
+
+            public Task StartAsync(CancellationToken cancellationToken)
+            {
+                throw new NotImplementedException();
+            }
+
+            public Task StopAsync(CancellationToken cancellationToken)
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        [AutoBindConfiguration(ConfigRoot = "Test1")]
+        public class Test1Options
+        {
+            public string StringVal { get; set; }
+            public int IntVal { get; set; }
+            public IEnumerable<string> ListItems { get; set; }
+            public IEnumerable<string> ListItems1 { get; set; }
+            public Subclass Sub1 { get; set; }
+            public IEnumerable<Subclass> Subs { get; set; }
+
+            public class Subclass
+            {
+                public string Name { get; set; }
+                public IEnumerable<string> Items { get; set; }
+            }
+        }
+    }
+}

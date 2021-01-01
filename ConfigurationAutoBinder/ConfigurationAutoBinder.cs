@@ -67,7 +67,10 @@ namespace Bonliva.ConfigurationAutoBinder
                     ? property.Name
                     : $"{attr.ConfigRoot}:{property.Name}";
 
-                var value = configuration.GetValue(property.PropertyType, configSectionName);
+                // var value = configuration.GetValue(property.PropertyType, configSectionName);
+
+                var value = configuration.GetSection(configSectionName)
+                    .Get(property.PropertyType);
 
                 if (isConfigRequired && value == null)
                 {

@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationAutoBinderTool
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationAutoBinderToolTest", "ConfigurationAutoBinderToolTest\ConfigurationAutoBinderToolTest.csproj", "{C143599E-775E-4740-98F1-5073FB556BAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationAutoBinderTest", "ConfigurationAutoBinderTest\ConfigurationAutoBinderTest.csproj", "{6A488BD4-E1DF-48C1-900C-A2099B716621}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,8 @@ Global
 		{C143599E-775E-4740-98F1-5073FB556BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C143599E-775E-4740-98F1-5073FB556BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C143599E-775E-4740-98F1-5073FB556BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C143599E-775E-4740-98F1-5073FB556BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A488BD4-E1DF-48C1-900C-A2099B716621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A488BD4-E1DF-48C1-900C-A2099B716621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A488BD4-E1DF-48C1-900C-A2099B716621}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal
