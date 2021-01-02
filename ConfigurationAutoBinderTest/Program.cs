@@ -33,10 +33,12 @@ namespace ConfigurationAutoBinderTest
         public class ProgramService : IHostedService
         {
             private readonly Test1Options _test1Options;
+            private readonly Test2Options _test2Options;
 
-            public ProgramService(Test1Options test1Options)
+            public ProgramService(Test1Options test1Options, Test2Options test2Options)
             {
                 _test1Options = test1Options;
+                _test2Options = test2Options;
             }
 
             public Task StartAsync(CancellationToken cancellationToken)
@@ -65,6 +67,12 @@ namespace ConfigurationAutoBinderTest
                 public string Name { get; set; }
                 public IEnumerable<string> Items { get; set; }
             }
+        }
+
+        [AutoBindConfiguration(ConfigRoot = "Test2")]
+        public class Test2Options
+        {
+            public IEnumerable<string> Names { get; set; }
         }
     }
 }
