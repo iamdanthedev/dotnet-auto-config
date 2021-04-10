@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <PackAsTool>true</PackAsTool>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
         
         <ToolCommandName>autoconfig</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
@@ -13,6 +13,7 @@
         <Authors>Dan the Dev (iamdanthedev@gmail.com)</Authors>
         <PackageVersion>1.0.0</PackageVersion>
         <RootNamespace>AutoConfig.DotNetTool</RootNamespace>
+        <LangVersion>9</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>

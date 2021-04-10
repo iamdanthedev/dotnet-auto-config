@@ -6,28 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace AutoConfig
 {
-    public class AutoConfigAttribute : Attribute
-    {
-        /// <summary>
-        /// Bind configuration object to values at the path
-        /// </summary>
-        public string? ConfigRoot { get; set; }
-
-        /// <summary>
-        /// Require configuration to be present in environments. Optional everywhere by default
-        /// </summary>
-        public string[]? RequiredInEnv { get; set; }
-
-        public AutoConfigAttribute(
-            // string? configRoot,
-            // bool? required,
-            // IEnumerable<string>? requiredInEnv
-        )
-        {
-        }
-    }
-
-    public static class ConfigurationAutoBinderServiceCollectionExtension
+    public static class AutoConfigServiceCollectionExtension
     {
         public static IServiceCollection AddAutoConfig(this IServiceCollection services,
             IConfiguration configuration, string env)
@@ -83,7 +62,7 @@ namespace AutoConfig
             services.AddSingleton(configClassType, configObject);
         }
     }
-
+    
     internal class AutoConfigurationException : Exception
     {
         public AutoConfigurationException(string configRoot, string propertyName) : base(
