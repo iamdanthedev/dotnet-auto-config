@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
-using Bonliva.ConfigurationAutoBinder;
+
 // using MongoDB.Bson;
 
-namespace ConfigurationAutoBinderToolTest
+namespace AutoConfig.DotNetTool.Tests
 {
-    [AutoBindConfiguration]
+    [AutoConfig]
     public class HelloWorldOptionsRoot
     {
         public string SomeVar1 { get; set; }
         public IEnumerable<string> SomeList1 { get; set; }
     }
 
-    [AutoBindConfiguration(ConfigRoot = "Namespace1")]
+    [AutoConfig(ConfigRoot = "Namespace1")]
     public class HelloWorkOptionsNamespaced
     {
         public string SomeVar1 { get; set; }

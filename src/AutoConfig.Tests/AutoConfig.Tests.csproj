@@ -11,13 +11,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ConfigurationAutoBinder\ConfigurationAutoBinder.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Update="appsettings.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AutoConfig\AutoConfig.csproj" />
     </ItemGroup>
 
 </Project>

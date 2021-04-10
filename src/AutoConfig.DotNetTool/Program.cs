@@ -4,13 +4,11 @@ using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Loader;
-using Bonliva.ConfigurationAutoBinder;
 using Microsoft.Extensions.CommandLineUtils;
 using MoreLinq;
 using Newtonsoft.Json;
 
-namespace ConfigurationAutoBinderTool
+namespace AutoConfig.DotNetTool
 {
     class Program
     {
@@ -118,16 +116,16 @@ namespace ConfigurationAutoBinderTool
         public static List<ConfigRecord> GetConfigRecordsInAssemblies(
             List<Assembly> assemblies)
         {
-            var attrType = typeof(AutoBindConfigurationAttribute);
+            var attrType = typeof(AutoConfigAttribute);
 
             var attrs = assemblies.SelectMany(x => x.GetTypes())
                 .Where(x => x.IsDefined(attrType, true))
                 .Select(delegate(Type x)
                 {
                     var attr =
-                        (AutoBindConfigurationAttribute?) Attribute.GetCustomAttribute(
+                        (AutoConfigAttribute?) Attribute.GetCustomAttribute(
                             x,
-                            typeof(AutoBindConfigurationAttribute));
+                            typeof(AutoConfigAttribute));
 
                     return new AttributeOnType(x, attr);
                 });
@@ -163,14 +161,14 @@ namespace ConfigurationAutoBinderTool
 
         private class AttributeOnType
         {
-            public AttributeOnType(Type type, AutoBindConfigurationAttribute attr)
+            public AttributeOnType(Type type, AutoConfigAttribute attr)
             {
                 Type = type;
                 Attr = attr;
             }
 
             public Type Type { get; set; }
-            public AutoBindConfigurationAttribute Attr { get; set; }
+            public AutoConfigAttribute Attr { get; set; }
         }
 
         public class ConfigRecord

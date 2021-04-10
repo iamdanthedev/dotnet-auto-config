@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using Bonliva.ConfigurationAutoBinder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace ConfigurationAutoBinderTest
+namespace AutoConfig.Tests
 {
     class Program
     {
@@ -23,7 +21,7 @@ namespace ConfigurationAutoBinderTest
                 })
                 .ConfigureServices((context, services) =>
                 {
-                    services.AddAutoBoundConfiguration(context.Configuration, "Development");
+                    services.AddAutoConfig(context.Configuration, "Development");
                     services.AddHostedService<ProgramService>();
 
                 })
@@ -52,7 +50,7 @@ namespace ConfigurationAutoBinderTest
             }
         }
 
-        [AutoBindConfiguration(ConfigRoot = "Test1")]
+        [AutoConfig(ConfigRoot = "Test1")]
         public class Test1Options
         {
             public string StringVal { get; set; }
@@ -69,7 +67,7 @@ namespace ConfigurationAutoBinderTest
             }
         }
 
-        [AutoBindConfiguration(ConfigRoot = "Test2")]
+        [AutoConfig(ConfigRoot = "Test2")]
         public class Test2Options
         {
             public IEnumerable<string> Names { get; set; }

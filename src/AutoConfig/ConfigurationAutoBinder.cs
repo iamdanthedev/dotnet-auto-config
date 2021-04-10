@@ -4,9 +4,9 @@ using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Bonliva.ConfigurationAutoBinder
+namespace AutoConfig
 {
-    public class AutoBindConfigurationAttribute : Attribute
+    public class AutoConfigAttribute : Attribute
     {
         /// <summary>
         /// Bind configuration object to values at the path
@@ -18,7 +18,7 @@ namespace Bonliva.ConfigurationAutoBinder
         /// </summary>
         public string[]? RequiredInEnv { get; set; }
 
-        public AutoBindConfigurationAttribute(
+        public AutoConfigAttribute(
             // string? configRoot,
             // bool? required,
             // IEnumerable<string>? requiredInEnv
@@ -29,10 +29,10 @@ namespace Bonliva.ConfigurationAutoBinder
 
     public static class ConfigurationAutoBinderServiceCollectionExtension
     {
-        public static IServiceCollection AddAutoBoundConfiguration(this IServiceCollection services,
+        public static IServiceCollection AddAutoConfig(this IServiceCollection services,
             IConfiguration configuration, string env)
         {
-            var attrType = typeof(AutoBindConfigurationAttribute);
+            var attrType = typeof(AutoConfigAttribute);
             AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(x => x.GetTypes())
                 .Where(x => x.IsDefined(attrType, true))
@@ -46,8 +46,8 @@ namespace Bonliva.ConfigurationAutoBinder
             IConfiguration configuration, string env)
         {
             var attr =
-                (AutoBindConfigurationAttribute?) Attribute.GetCustomAttribute(configClassType,
-                    typeof(AutoBindConfigurationAttribute));
+                (AutoConfigAttribute?) Attribute.GetCustomAttribute(configClassType,
+                    typeof(AutoConfigAttribute));
 
             if (attr == null)
             {

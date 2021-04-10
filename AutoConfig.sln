@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationAutoBinder", "ConfigurationAutoBinder\ConfigurationAutoBinder.csproj", "{3CB06075-5D32-4DA2-8724-02D90597D7EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoConfig", "src\AutoConfig\AutoConfig.csproj", "{3CB06075-5D32-4DA2-8724-02D90597D7EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationAutoBinderTool", "ConfigurationAutoBinderTool\ConfigurationAutoBinderTool.csproj", "{33774E60-57E3-4101-965B-2FF2E8CE6DAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoConfig.DotNetTool", "src\AutoConfig.DotNetTool\AutoConfig.DotNetTool.csproj", "{33774E60-57E3-4101-965B-2FF2E8CE6DAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationAutoBinderToolTest", "ConfigurationAutoBinderToolTest\ConfigurationAutoBinderToolTest.csproj", "{C143599E-775E-4740-98F1-5073FB556BAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoConfig.Tests", "src\AutoConfig.Tests\AutoConfig.Tests.csproj", "{C143599E-775E-4740-98F1-5073FB556BAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationAutoBinderTest", "ConfigurationAutoBinderTest\ConfigurationAutoBinderTest.csproj", "{6A488BD4-E1DF-48C1-900C-A2099B716621}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoConfig.DotNetTool.Tests", "src\AutoConfig.DotNetTool.Tests\AutoConfig.DotNetTool.Tests.csproj", "{6A488BD4-E1DF-48C1-900C-A2099B716621}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

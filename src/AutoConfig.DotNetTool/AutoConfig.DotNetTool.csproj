@@ -9,23 +9,20 @@
         <OutputType>Exe</OutputType>
         <Nullable>enable</Nullable>
 
-        <PackageId>Bonliva.ConfigurationAutoBinderTool</PackageId>
-        <Authors>Bonliva AB</Authors>
-        <Copyright>Bonliva AB</Copyright>
-        <PackageProjectUrl>https://bonliva.se</PackageProjectUrl>
-        <PackageVersion>$([System.DateTime]::Now.ToString("yyyy.MM.dd.HHmmss"))</PackageVersion>
-        <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-        <RootNamespace>Bonliva.ConfigurationAutoBinderTool</RootNamespace>
+        <PackageId>DanTheDev.AutoConfig.DotNetTool</PackageId>
+        <Authors>Dan the Dev (iamdanthedev@gmail.com)</Authors>
+        <PackageVersion>1.0.0</PackageVersion>
+        <RootNamespace>AutoConfig.DotNetTool</RootNamespace>
     </PropertyGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\ConfigurationAutoBinder\ConfigurationAutoBinder.csproj" />
-    </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Microsoft.Extensions.CommandLineUtils" Version="1.1.1" />
       <PackageReference Include="morelinq" Version="3.3.2" />
       <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AutoConfig\AutoConfig.csproj" />
     </ItemGroup>
 
 </Project>

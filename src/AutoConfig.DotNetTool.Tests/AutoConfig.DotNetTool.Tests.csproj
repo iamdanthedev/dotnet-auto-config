@@ -6,11 +6,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ConfigurationAutoBinder\ConfigurationAutoBinder.csproj" />
+      <PackageReference Include="MongoDB.Bson" Version="2.11.4" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="MongoDB.Bson" Version="2.11.4" />
+      <ProjectReference Include="..\AutoConfig\AutoConfig.csproj" />
     </ItemGroup>
 
 </Project>

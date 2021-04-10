@@ -4,13 +4,13 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <Nullable>enable</Nullable>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-        <PackageId>Bonliva.ConfigurationAutoBinder</PackageId>
-        <Authors>Bonliva AB</Authors>
+        <PackageId>DanTheDev.AutoConfig</PackageId>
+        <Authors>Dan the Dev (iamdanthedev@gmail.com)</Authors>
         <Copyright>Bonliva AB</Copyright>
         <PackageProjectUrl>https://bonliva.se</PackageProjectUrl>
-        <PackageVersion>$([System.DateTime]::Now.ToString("yyyy.MM.dd.HHmmss"))</PackageVersion>
+        <PackageVersion>1.0.0</PackageVersion>
         <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-        <RootNamespace>Bonliva.ConfigurationAutoBinder</RootNamespace>
+        <RootNamespace>AutoConfig</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
